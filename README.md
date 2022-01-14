@@ -6,4 +6,4 @@ powercord plugin to notify when a user comes online ong idk what else to type
 
 ![image](https://i.imgur.com/QK2Jmbf.png)
 
-![image](https://i.imgur.com/XFIXRl7.png)
+![image](https://i.imgur.com/87p2Guy.png)
