@@ -18,6 +18,7 @@ class PINGWHENONLINE extends Plugin {
         people.forEach((id) => {
             if (presence.user.id === id) {
                 console.log(presence.status);
+                this.playAudio(this.settings.get("notificationSoundUrl", ""));
                 if (XenoLib && this.settings.get("useXeno", false)) {
                     if (!presence.user.username) {
                         const user = this.userStore.getUser(user.id);
@@ -44,7 +45,12 @@ class PINGWHENONLINE extends Plugin {
         });
     }
 
-    sendToast() {}
+    playAudio(url) {
+        if (url.length) {
+            const audio = new Audio(url);
+            audio.play();
+        }
+    }
 
     pluginWillUnload() {
         powercord.api.settings.unregisterSettings(this.entityID);

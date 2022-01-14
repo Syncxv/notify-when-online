@@ -19,6 +19,13 @@ module.exports = class Settings extends React.Component {
                 >
                     Use XenoLib Notifactions
                 </SwitchItem>
+                <TextInput
+                    defaultValue={this.props.getSetting("notificationSoundUrl", "")}
+                    onChange={(stuff) => this.props.updateSetting("notificationSoundUrl", stuff)}
+                    note={<p>You can enter discord urls too :O</p>}
+                >
+                    Notifacation Sound Url
+                </TextInput>
                 <Category
                     name="THE PEOPLE"
                     description="you will get notifactions when they go online :O"
