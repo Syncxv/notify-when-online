@@ -18,7 +18,6 @@ class PINGWHENONLINE extends Plugin {
         people.forEach((id) => {
             if (presence.user.id === id) {
                 console.log(presence.status);
-                console.log(this.settings.get("useXeno"));
                 if (XenoLib && this.settings.get("useXeno", false)) {
                     if (!presence.user.username) {
                         const user = this.userStore.getUser(user.id);
@@ -27,7 +26,7 @@ class PINGWHENONLINE extends Plugin {
                     return XenoLib.Notifications.info(`${presence.user.username} IS ${presence.status.toUpperCase()} :O`, { timeout: 5000 });
                 }
 
-                powercord.api.notices.sendToast("hehe", {
+                powercord.api.notices.sendToast("user-notifer", {
                     type: "success",
                     header: "ONLINE NOTIFER",
                     content: `${presence.user.username} IS ${presence.status.toUpperCase()} :O`,
@@ -36,7 +35,7 @@ class PINGWHENONLINE extends Plugin {
                             text: "Dismiss",
                             color: "green",
                             look: "outlined",
-                            onClick: () => powercord.api.notices.closeToast("remountNotif"),
+                            onClick: () => powercord.api.notices.closeToast("user-notifer"),
                         },
                     ],
                     timeout: 5e3,

@@ -33,7 +33,7 @@ module.exports = class Settings extends React.Component {
                                 u.split(",").map((id) => id.trim())
                             )
                         }
-                        note={<p>ENTER IDS BRO</p>}
+                        note={<p>ENTER Ids seperated by commas</p>}
                     >
                         Users
                     </TextInput>
